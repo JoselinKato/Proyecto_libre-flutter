@@ -1,0 +1,52 @@
+name: kanban_app
+description: Un gestor de tareas Kanban personal.
+
+# Evita que se publique accidentalmente
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  # Asegúrate de usar una versión reciente de Dart
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Requerido para que las fechas y calendarios salgan en español
+  flutter_localizations:
+    sdk: flutter
+
+  # --- Base de Datos (Persistencia) ---
+  # La base de datos NoSQL principal
+  hive: ^2.2.3
+  # Helper para integrar Hive con Flutter
+  hive_flutter: ^1.1.0
+  # Se usa para encontrar el directorio correcto en el móvil donde guardar la BD
+  path_provider: ^2.1.3
+
+  # --- Gestión de Estado y Navegación ---
+  # Nuestro gestor de estado (ChangeNotifierProvider, etc.)
+  provider: ^6.1.2
+  # Nuestro gestor de rutas (navegación)
+  go_router: ^14.1.4
+
+  # --- UI y Utilidades ---
+  # Para formatear fechas (ej. "3 de nov. de 2025")
+  intl: ^0.20.2
+  # Para generar IDs únicos (ej. "abc-123-def") para tableros y tareas
+  uuid: ^4.4.0 
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  # Linters estándar de Flutter para un código limpio
+  flutter_lints: ^3.0.0
+
+flutter:
+  # Habilita el diseño Material
+  uses-material-design: true
+
